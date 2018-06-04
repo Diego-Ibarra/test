@@ -1,0 +1,10 @@
+conda create -n workshop2018 python=3.6
+
+conda install -c anaconda notebook
+
+conda install pandas
+
+conda install matplotlib
+
+conda install -c anaconda basemap
+
