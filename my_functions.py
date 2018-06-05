@@ -3,7 +3,7 @@ import pandas as pd
 
 def add_maritimes_region(m):
     import shapefile
-    sf = shapefile.Reader("M:\\OCMD\\01_Data\\Management_Areas\\Administrative_Boundaries\\RegionalPolygon_Maritimes_OCMD_2013\\OriginalData\\MaritimesRegionPolygon_UpdatedSept2015_wgs84")
+    sf = shapefile.Reader("shapefiles/MaritimesRegionPolygon_UpdatedSept2015_wgs84")
     for shape in list(sf.iterShapes()):
         npoints=len(shape.points) # total points
         nparts = len(shape.parts) # total parts
@@ -68,7 +68,7 @@ def add_NAFO_areas(m):
     import shapefile
 
 
-    sf = shapefile.Reader("M:\\OCMD\\01_Data\\Management_Areas\\Fisheries\\FishingZones_NEAtlantic_NAFO_2011\\ValueAdded\\NAFO_SubUnits_CanAtlantic")
+    sf = shapefile.Reader("shapefiles/NAFO_SubUnits_CanAtlantic")
     
     for shape in list(sf.iterShapes()):
         npoints=len(shape.points) # total points
@@ -101,7 +101,7 @@ def add_NAFO_areas(m):
             plot_polygon(poly_lons, poly_lats, m, edgecolor='#a6a6a6',linewidth=0.5,alpha=0.5,zorder=20)
     
    # NAFO labels
-    nafo = pd.read_csv('M:\\OCMD\\02_Projects\\IOM\\NARW_ResourceMgmt\\NAFO_subunit_centroids.csv')
+    nafo = pd.read_csv('NAFO_subunit_centroids.csv')
 
     zones = pd.unique(nafo['UnitArea'].values)
 
