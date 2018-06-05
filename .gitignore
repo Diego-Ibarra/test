@@ -55,3 +55,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+usgsCeSrtm30v6\.nc
+
+\.ipynb_checkpoints/
